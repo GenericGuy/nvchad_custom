@@ -133,6 +133,10 @@ local plugins = {
       codewindow.apply_default_keybinds()
     end,
   },
+  {
+    "mbbill/undotree",
+    event = { "BufReadPost", "BufNewFile" },
+  },
 }
 
 return plugins
