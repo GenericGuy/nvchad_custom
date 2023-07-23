@@ -54,9 +54,9 @@ M.lspconfig = {
     ["<leader>ls"] = { function() vim.lsp.buf.signature_help() end, "[l]SP [s]ignature help" },
     ["<leader>lt"] = { function() vim.lsp.buf.type_definition() end, "[l]SP definition [t]ype" },
     ["<leader>lr"] = { function() require("nvchad_ui.renamer").open() end, "[l]SP [r]ename" },
-    ["<leader>lD"] = { function() vim.diagnostic.open_float { border = "rounded" } end, "[l]SP [D]etails (diagnostic)" },
-    ["<leader>lp"] = { function() vim.diagnostic.goto_prev { float = { border = "rounded" } } end, "[l]SP [p]revious diagnostic" },
-    ["<leader>ln"] = { function() vim.diagnostic.goto_next { float = { border = "rounded" } } end, "[l]SP [n]ext diagnostic" },
+    ["<leader>lD"] = { function() vim.diagnostic.open_float({ border = "rounded" }) end, "[l]SP [D]etails (diagnostic)" },
+    ["<leader>lp"] = { function() vim.diagnostic.goto_prev({ float = { border = "rounded" } }) end, "[l]SP [p]revious diagnostic" },
+    ["<leader>ln"] = { function() vim.diagnostic.goto_next({ float = { border = "rounded" } }) end, "[l]SP [n]ext diagnostic" },
   },
 }
 
@@ -66,12 +66,12 @@ M.general = {
   },
 
   n = {
-    ["<leader>s"]  = { "<cmd> ClangdSwitchSourceHeader <CR>", "[S]witch header/source (clang)" },
-    ["<leader>lf"] = { function() vim.lsp.buf.format { async = true } end, "[l]SP [f]ormat" },
+    ["<leader>s"] = { "<cmd> ClangdSwitchSourceHeader <CR>", "[S]witch header/source (clang)" },
+    ["<leader>lf"] = { function() vim.lsp.buf.format({ async = true }) end, "[l]SP [f]ormat" },
   },
 
   v = {
-    ["<leader>y"]  = { '"+y', "[Y]ank to system clipboard" },
+    ["<leader>y"] = { '"+y', "[Y]ank to system clipboard" },
   },
 }
 

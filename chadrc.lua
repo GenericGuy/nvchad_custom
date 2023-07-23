@@ -3,7 +3,7 @@
 vim.opt.clipboard = ""
 
 local M = {}
-M.ui = require "custom.userinterface"
+M.ui = require("custom.userinterface")
 M.plugins = "custom.plugins"
-M.mappings = require "custom.mappings"
+M.mappings = require("custom.mappings")
 return M

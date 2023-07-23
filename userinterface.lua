@@ -23,9 +23,8 @@ local M = {
     },
   },
 
-  -- statusbar
   statusline = {
-    theme = "vscode", -- default/vscode/vscode_colored/minimal
+    theme = "vscode",
   },
 }
 

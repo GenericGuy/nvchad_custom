@@ -1,5 +1,5 @@
 local overrides = require("custom.configs.overrides")
-local cmp = require "cmp"
+local cmp = require("cmp")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -12,22 +12,20 @@ local plugins = {
     "neovim/nvim-lspconfig",
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
-      config = function()
-        require "custom.configs.null-ls"
-      end,
+      config = function() require("custom.configs.null-ls") end,
     },
     config = function()
-      require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
+      require("plugins.configs.lspconfig")
+      require("custom.configs.lspconfig")
     end,
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = overrides.treesitter
+    opts = overrides.treesitter,
   },
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
   {
     "nvim-tree/nvim-tree.lua",
@@ -37,23 +35,23 @@ local plugins = {
     "hrsh7th/nvim-cmp",
     opts = {
       mapping = {
-        ["<C-j>"]  = cmp.mapping.scroll_docs(-4),
-        ["<C-k>"]  = cmp.mapping.scroll_docs(4),
-        ["<Up>"]   = cmp.mapping.select_prev_item(),
+        ["<C-j>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-k>"] = cmp.mapping.scroll_docs(4),
+        ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<Down>"] = cmp.mapping.select_next_item(),
-        ["<Tab>"]  = cmp.mapping(function(fallback)
+        ["<Tab>"] = cmp.mapping(function(fallback)
           if cmp.visible() then
             cmp.confirm({ select = true })
           elseif require("luasnip").expand_or_jumpable() then
             vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
           elseif has_words_before() then
-             cmp.complete()
+            cmp.complete()
           else
             fallback()
           end
-        end, {"i","s"}),
-      }
-    }
+        end, { "i", "s" }),
+      },
+    },
   },
   {
     "ggandor/leap.nvim",
@@ -113,8 +111,8 @@ local plugins = {
     config = function(_, opts)
       require("illuminate").configure(opts)
       -- Change highlighting to block (default is underlined)
-      vim.api.nvim_set_hl(0, "IlluminatedWordText",  { link = "Visual" })
-      vim.api.nvim_set_hl(0, "IlluminatedWordRead",  { link = "Visual" })
+      vim.api.nvim_set_hl(0, "IlluminatedWordText", { link = "Visual" })
+      vim.api.nvim_set_hl(0, "IlluminatedWordRead", { link = "Visual" })
       vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { link = "Visual" })
     end,
 
@@ -124,17 +122,17 @@ local plugins = {
     },
   },
   {
-    'gorbit99/codewindow.nvim',
+    "gorbit99/codewindow.nvim",
     event = { "BufReadPost", "BufNewFile" },
     config = function()
-      local codewindow = require('codewindow')
-      codewindow.setup( {
+      local codewindow = require("codewindow")
+      codewindow.setup({
         auto_enable = true,
         minimap_width = 15,
-      } )
+      })
       codewindow.apply_default_keybinds()
     end,
-  }
+  },
 }
 
 return plugins

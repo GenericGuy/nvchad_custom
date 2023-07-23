@@ -31,7 +31,7 @@ M.mason = {
     "cmakelang",
     "pyright",
     "rust-analyzer",
-  }
+  },
 }
 
 -- git support in nvimtree
