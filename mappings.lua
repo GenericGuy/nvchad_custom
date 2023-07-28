@@ -60,6 +60,17 @@ M.lspconfig = {
   },
 }
 
+M.gitsigns = {
+  plugin = true,
+
+  n = {
+    ["<leader>gr"] = { function() require("gitsigns").reset_hunk() end, "[g]it [r]eset hunk" },
+    ["<leader>gh"] = { function() require("gitsigns").preview_hunk() end, "[g]it [h]unk preview" },
+    ["<leader>gb"] = { function() package.loaded.gitsigns.blame_line() end, "[g]it [b]lame" },
+    ["<leader>gt"] = { function() require("gitsigns").toggle_deleted() end, "[g]it [t]oggle deleted" },
+  },
+}
+
 M.general = {
   i = {
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
@@ -68,17 +79,12 @@ M.general = {
   n = {
     ["<leader>s"] = { "<cmd> ClangdSwitchSourceHeader <CR>", "[S]witch header/source (clang)" },
     ["<leader>lf"] = { function() vim.lsp.buf.format({ async = true }) end, "[l]SP [f]ormat" },
+    ["<leader>do"] = { "<cmd> DiffviewOpen <CR>", "[d]iffview [o]pen" },
+    ["<leader>dc"] = { "<cmd> DiffviewClose <CR>", "[d]iffview [c]pen" },
   },
 
   v = {
     ["<leader>y"] = { '"+y', "[Y]ank to system clipboard" },
-  },
-}
-
-M.diff = {
-  n = {
-    ["<leader>do"] = { "<cmd> DiffviewOpen <CR>", "[d]iffview [o]pen" },
-    ["<leader>dc"] = { "<cmd> DiffviewClose <CR>", "[d]iffview [c]pen" },
   },
 }
 

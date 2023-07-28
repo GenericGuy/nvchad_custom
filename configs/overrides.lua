@@ -28,7 +28,7 @@ M.mason = {
     "bash-language-server",
     "clangd",
     "clang-format",
-    "cmakelang",
+    "cmake-language-server",
     "pyright",
     "rust-analyzer",
   },

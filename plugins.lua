@@ -88,6 +88,7 @@ local plugins = {
         l = { name = "lsp" },
         g = { name = "git" },
         m = { name = "map" },
+        d = { name = "diffview" },
       }, { prefix = "<leader>" })
     end,
   },
@@ -120,18 +121,6 @@ local plugins = {
       { "]]", desc = "Next Reference" },
       { "[[", desc = "Prev Reference" },
     },
-  },
-  {
-    "gorbit99/codewindow.nvim",
-    event = { "BufReadPost", "BufNewFile" },
-    config = function()
-      local codewindow = require("codewindow")
-      codewindow.setup({
-        auto_enable = true,
-        minimap_width = 15,
-      })
-      codewindow.apply_default_keybinds()
-    end,
   },
   {
     "mbbill/undotree",
