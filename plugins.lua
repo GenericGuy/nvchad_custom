@@ -73,7 +73,8 @@ local plugins = {
   },
   {
     "sindrets/diffview.nvim",
-    lazy = false,
+    cmd = { "DiffviewOpen", "DiffviewClose" },
+    config = function() require("diffview").setup() end,
   },
   {
     "folke/which-key.nvim",

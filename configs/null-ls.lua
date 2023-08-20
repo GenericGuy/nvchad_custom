@@ -5,6 +5,7 @@ local lint = null_ls.builtins.diagnostics
 -- format-on-save
 local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
 
+-- Note: run MasonInstallAll to install them ^^
 local sources = {
   formatting.prettier,
   formatting.stylua,
