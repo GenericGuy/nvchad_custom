@@ -20,10 +20,11 @@ M.telescope = {
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "[f]ind [b]uffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "[f]ind [h]elp pages" },
     ["<leader>fz"] = { "<cmd> Telescope current_buffer_fuzzy_find <CR>", "[f]ind fu[z]zily in current buffer" },
+    ["<leader>fr"] = { "<cmd> Telescope resume <CR>", "[f]ind [r]esume" },
 
     -- LSP
     ["<leader>fs"] = { "<cmd> Telescope lsp_document_symbols <CR>", "[f]ind [s]ymbols" },
-    ["<leader>fr"] = { "<cmd> Telescope lsp_references <CR>", "[f]ind [r]eferences" },
+    ["<leader>fR"] = { "<cmd> Telescope lsp_references <CR>", "[f]ind [R]eferences" },
     ["<leader>li"] = { "<cmd> Telescope lsp_incoming_calls <CR>", "[l]SP [i]ncoming calls" },
     ["<leader>ld"] = { "<cmd> Telescope diagnostics bufnr=0 <CR>", "[l]SP [d]iagnostics" },
 

@@ -13,6 +13,9 @@ local plugins = {
     dependencies = {
       "jose-elias-alvarez/null-ls.nvim",
       config = function() require("custom.configs.null-ls") end,
+
+      { 'j-hui/fidget.nvim', tag = 'legacy', opts = {} },
+      { 'folke/neodev.nvim', opts = {} },
     },
     config = function()
       require("plugins.configs.lspconfig")
