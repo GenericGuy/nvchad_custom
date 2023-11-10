@@ -29,6 +29,7 @@ M.mason = {
     "clangd",
     "clang-format",
     "cmake-language-server",
+    "cmakelang",
     "pyright",
     "rust-analyzer",
   },
