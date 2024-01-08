@@ -1,6 +1,7 @@
 ---@type ChadrcConfig
 
 vim.opt.clipboard = ""
+vim.opt.scrolloff = 5;
 
 local M = {}
 M.ui = require("custom.userinterface")

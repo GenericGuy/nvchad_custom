@@ -14,6 +14,7 @@ for _, lsp in ipairs(servers) do
       cmd = {
         "clangd",
         "--offset-encoding=utf-16",
+        "--clang-tidy",
       },
     })
   else
